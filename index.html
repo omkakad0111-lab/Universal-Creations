@@ -6,7 +6,6 @@
 <title>Universal Creations — Landing Pages That Pop</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Montserrat:wght@500&display=swap" rel="stylesheet" />
 <style>
-  /* Reset & body */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
@@ -16,6 +15,7 @@
     background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
     color: #f0f0f5;
     overflow-x: hidden;
+    padding-bottom: 60px; /* Space for contact bar */
   }
   body::before {
     content: "";
@@ -265,28 +265,28 @@
     font-family: 'Montserrat', sans-serif;
     z-index: 10;
   }
-  /* Contact Button */
-  #contactButton {
+  /* Contact Bar */
+  #contactBar {
     position: fixed;
-    bottom: 28px;
-    right: 28px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background: linear-gradient(90deg, #ff6ec4, #42e695);
-    padding: 14px 24px;
-    border-radius: 50px;
-    color: #121212;
-    font-weight: 700;
+    padding: 14px 0;
+    text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    box-shadow: 0 0 30px #ff6ec4cc, 0 0 40px #42e695cc;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #121212;
     cursor: pointer;
-    z-index: 10000;
+    box-shadow: 0 -2px 20px #ff6ec4cc, 0 -2px 30px #42e695cc;
     user-select: none;
+    z-index: 10000;
     transition: background 0.3s ease, box-shadow 0.3s ease;
-    border: none;
   }
-  #contactButton:hover {
+  #contactBar:hover {
     background: linear-gradient(90deg, #42e695, #ff6ec4);
-    box-shadow: 0 0 50px #ff6ec4ff, 0 0 60px #42e695ff;
+    box-shadow: 0 -2px 40px #ff6ec4ff, 0 -2px 50px #42e695ff;
   }
   /* Modal Overlay */
   #contactModal {
@@ -333,7 +333,6 @@
     cursor: pointer;
     user-select: none;
   }
-  /* Responsive */
   @media(max-width: 720px) {
     header h1 {
       font-size: 3.2rem;
@@ -382,7 +381,7 @@
   <!-- Landing Page Booking Form -->
   <section class="form-section" id="landingFormSection">
     <h2>Book Your Landing Page</h2>
-    <form id="landingForm" action="https://formspree.io/f/your-landing-form-id" method="POST">
+    <form id="landingForm" action="https://formspree.io/f/mdkdbpyb" method="POST">
       <label for="lf_name">Full Name</label>
       <input type="text" id="lf_name" name="name" required placeholder="Your full name" />
 
@@ -400,15 +399,17 @@
   </section>
 </main>
 
-<!-- Contact Me Floating Button -->
-<button id="contactButton" aria-label="Contact Me">Contact Me</button>
+<!-- Contact Bar at Bottom -->
+<div id="contactBar" role="button" tabindex="0" aria-label="Contact Me">
+  Contact Me
+</div>
 
 <!-- Contact Modal -->
 <div id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
   <div id="modalContent">
     <button id="closeModal" aria-label="Close Contact Form">&times;</button>
     <h2 id="modalTitle">Contact Me</h2>
-    <form id="contactForm" action="https://formspree.io/f/your-contact-form-id" method="POST">
+    <form id="contactForm" action="https://formspree.io/f/mdkdbpyb"method="POST">
       <label for="cf_name">Name</label>
       <input type="text" id="cf_name" name="name" required placeholder="Your name" />
 
@@ -457,11 +458,48 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    // Attach submit handlers
     const landingForm = document.getElementById('landingForm');
     const contactForm = document.getElementById('contactForm');
     if (landingForm) landingForm.onsubmit = handleSubmit;
     if (contactForm) contactForm.onsubmit = handleSubmit;
 
-    // Modal controls
-   
+    const contactBar = document.getElementById('contactBar');
+    const contactModal = document.getElementById('contactModal');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    function openModal() {
+      contactModal.classList.add('active');
+      contactModal.focus();
+    }
+    window.openModal = openModal;
+
+    function closeModal() {
+      contactModal.classList.remove('active');
+    }
+    window.closeModal = closeModal;
+
+    contactBar.addEventListener('click', openModal);
+    contactBar.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        openModal();
+        e.preventDefault();
+      }
+    });
+
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Close modal on outside click
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) closeModal();
+    });
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  });
+</script>
+</body>
+</html>
