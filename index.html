@@ -1,276 +1,356 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Universal Creations — Landing Pages That Pop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Montserrat:wght@500&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      min-height: 100vh;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
-      color: #f0f0f5;
-      overflow-x: hidden;
-    }
-
-    /* Dynamic layered background shapes */
-    body::before {
-      content: "";
-      position: fixed;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle at center, #ff6ec4 0%, transparent 70%);
-      top: 20%;
-      left: -10%;
-      filter: blur(150px);
-      opacity: 0.7;
-      z-index: 0;
-      animation: float1 10s ease-in-out infinite alternate;
-    }
-    body::after {
-      content: "";
-      position: fixed;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle at center, #42e695 0%, transparent 60%);
-      bottom: 10%;
-      right: -15%;
-      filter: blur(170px);
-      opacity: 0.6;
-      z-index: 0;
-      animation: float2 12s ease-in-out infinite alternate;
-    }
-    @keyframes float1 {
-      0% { transform: translateY(0) translateX(0); }
-      100% { transform: translateY(40px) translateX(30px); }
-    }
-    @keyframes float2 {
-      0% { transform: translateY(0) translateX(0); }
-      100% { transform: translateY(-30px) translateX(-40px); }
-    }
-
-    header {
-      text-align: center;
-      padding: 120px 20px 60px;
-      position: relative;
-      z-index: 10;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Universal Creations — Landing Pages That Pop</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+<style>
+  /* Reset & body */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    color: #f0f0f5;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle at center, #ff6ec4 0%, transparent 70%);
+    top: 20%;
+    left: -10%;
+    filter: blur(150px);
+    opacity: 0.7;
+    z-index: 0;
+    animation: float1 10s ease-in-out infinite alternate;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle at center, #42e695 0%, transparent 60%);
+    bottom: 10%;
+    right: -15%;
+    filter: blur(170px);
+    opacity: 0.6;
+    z-index: 0;
+    animation: float2 12s ease-in-out infinite alternate;
+  }
+  @keyframes float1 {
+    0% { transform: translateY(0) translateX(0); }
+    100% { transform: translateY(40px) translateX(30px); }
+  }
+  @keyframes float2 {
+    0% { transform: translateY(0) translateX(0); }
+    100% { transform: translateY(-30px) translateX(-40px); }
+  }
+  header {
+    text-align: center;
+    padding: 120px 20px 60px;
+    position: relative;
+    z-index: 10;
+  }
+  header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 4.8rem;
+    color: #fff;
+    letter-spacing: 0.06em;
+    text-shadow:
+      0 0 10px #ff6ec4cc,
+      0 0 20px #42e695cc;
+    margin-bottom: 12px;
+  }
+  header p {
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: #c8d6f7cc;
+    max-width: 680px;
+    margin: 0 auto;
+    letter-spacing: 0.04em;
+    text-shadow: 0 0 6px #0008;
+  }
+  main {
+    max-width: 980px;
+    margin: 0 auto 120px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+  }
+  section.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 38px;
+    margin-bottom: 40px;
+  }
+  .feature-card {
+    background: linear-gradient(145deg, #293462, #546a7b);
+    border-radius: 24px;
+    padding: 38px 28px 44px;
+    color: #e3e8ff;
+    box-shadow: 0 0 26px #42e695aa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .feature-card:hover {
+    transform: translateY(-16px);
+    box-shadow: 0 0 48px #ff6ec4dd, 0 0 48px #42e695dd;
+    color: #fff;
+  }
+  .feature-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .feature-card p {
+    font-weight: 500;
+    font-size: 1.12rem;
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+  }
+  .feature-card::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -60px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle at center, #ff6ec4bb, transparent 80%);
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: 1;
+    transition: background 0.3s ease;
+  }
+  .feature-card:hover::before {
+    background: radial-gradient(circle at center, #42e695cc, transparent 80%);
+  }
+  section.pricing {
+    margin-bottom: 100px;
+    text-align: center;
+  }
+  section.pricing h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #fff;
+    text-shadow: 0 0 10px #ff6ec4cc, 0 0 15px #42e695cc;
+    margin-bottom: 18px;
+  }
+  .price-tag {
+    display: inline-block;
+    background: linear-gradient(145deg, #ff6ec4, #42e695);
+    padding: 32px 48px;
+    border-radius: 28px;
+    box-shadow: 0 0 40px #ff6ec4cc, 0 0 50px #42e695cc;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: #121212;
+    letter-spacing: 0.1em;
+    user-select: none;
+  }
+  .cta-button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 60px;
+    padding: 18px 56px;
+    background: linear-gradient(90deg, #ff6ec4, #42e695);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #121212;
+    border-radius: 34px;
+    box-shadow: 0 0 40px #ff6ec4cc, 0 0 60px #42e695cc;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    letter-spacing: 0.08em;
+  }
+  .cta-button:hover {
+    background: linear-gradient(90deg, #42e695, #ff6ec4);
+    box-shadow: 0 0 60px #ff6ec4ee, 0 0 80px #42e695ee;
+  }
+  section.form-section {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #293462;
+    padding: 32px;
+    border-radius: 20px;
+    color: #f0f0f5;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 0 40px #42e695aa inset;
+    position: relative;
+    z-index: 10;
+  }
+  section.form-section h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 2.4rem;
+    text-shadow: 0 0 14px #42e695cc;
+    letter-spacing: 0.06em;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #99b1f2;
+    user-select: none;
+  }
+  input, textarea {
+    border-radius: 12px;
+    border: none;
+    background: #36457f;
+    color: #f0f0f5;
+    font-size: 1rem;
+    padding: 14px 18px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: inset 0 0 14px #42e69599;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    resize: vertical;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #7a85adaa;
+    font-style: italic;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    background: #4259a0;
+    box-shadow: 0 0 28px #42e695cc;
+    color: #fff;
+  }
+  textarea {
+    min-height: 120px;
+  }
+  button {
+    background: linear-gradient(90deg, #ff6ec4, #42e695);
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #121212;
+    cursor: pointer;
+    box-shadow: 0 0 38px #ff6ec4cc, 0 0 60px #42e695cc;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.08em;
+    user-select: none;
+  }
+  button:hover {
+    background: linear-gradient(90deg, #42e695, #ff6ec4);
+    box-shadow: 0 0 68px #ff6ec4ff, 0 0 88px #42e695ff;
+  }
+  footer {
+    text-align: center;
+    padding: 40px 12px;
+    font-size: 0.95rem;
+    color: #8b9affcc;
+    user-select: none;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 10;
+  }
+  /* Contact Button */
+  #contactButton {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: linear-gradient(90deg, #ff6ec4, #42e695);
+    padding: 14px 24px;
+    border-radius: 50px;
+    color: #121212;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    box-shadow: 0 0 30px #ff6ec4cc, 0 0 40px #42e695cc;
+    cursor: pointer;
+    z-index: 10000;
+    user-select: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+  }
+  #contactButton:hover {
+    background: linear-gradient(90deg, #42e695, #ff6ec4);
+    box-shadow: 0 0 50px #ff6ec4ff, 0 0 60px #42e695ff;
+  }
+  /* Modal Overlay */
+  #contactModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(18,18,18,0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 11000;
+    padding: 20px;
+  }
+  #contactModal.active {
+    display: flex;
+  }
+  #modalContent {
+    background: #293462;
+    border-radius: 20px;
+    padding: 28px 36px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 48px #42e695bb;
+    position: relative;
+    color: #f0f0f5;
+  }
+  #modalContent h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #42e695cc;
+  }
+  #closeModal {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #f0f0f5;
+    cursor: pointer;
+    user-select: none;
+  }
+  /* Responsive */
+  @media(max-width: 720px) {
     header h1 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 4.8rem;
-      color: #fff;
-      letter-spacing: 0.06em;
-      text-shadow:
-        0 0 10px #ff6ec4cc,
-        0 0 20px #42e695cc;
-      margin-bottom: 12px;
+      font-size: 3.2rem;
     }
-    header p {
-      font-weight: 500;
-      font-size: 1.6rem;
-      color: #c8d6f7cc;
-      max-width: 680px;
-      margin: 0 auto;
-      letter-spacing: 0.04em;
-      text-shadow: 0 0 6px #0008;
-    }
-
     main {
-      max-width: 980px;
-      margin: 0 auto 120px;
-      padding: 0 20px;
-      position: relative;
-      z-index: 10;
+      max-width: 90vw;
     }
-
-    /* Features */
     section.features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 38px;
-      margin-bottom: 100px;
+      grid-template-columns: 1fr !important;
     }
-    .feature-card {
-      background: linear-gradient(145deg, #293462, #546a7b);
-      border-radius: 24px;
-      padding: 38px 28px 44px;
-      color: #e3e8ff;
-      box-shadow: 0 0 26px #42e695aa;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      position: relative;
-      overflow: hidden;
+    section.form-section {
+      margin: 30px 15px;
     }
-    .feature-card:hover {
-      transform: translateY(-16px);
-      box-shadow: 0 0 48px #ff6ec4dd, 0 0 48px #42e695dd;
-      color: #fff;
-    }
-    .feature-card h3 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 2;
-    }
-    .feature-card p {
-      font-weight: 500;
-      font-size: 1.12rem;
-      line-height: 1.5;
-      position: relative;
-      z-index: 2;
-    }
-    /* Abstract shape behind feature heading */
-    .feature-card::before {
-      content: "";
-      position: absolute;
-      top: -20px;
-      right: -60px;
-      width: 160px;
-      height: 160px;
-      background: radial-gradient(circle at center, #ff6ec4bb, transparent 80%);
-      border-radius: 50%;
-      filter: blur(40px);
-      z-index: 1;
-      transition: background 0.3s ease;
-    }
-    .feature-card:hover::before {
-      background: radial-gradient(circle at center, #42e695cc, transparent 80%);
-    }
-
-    /* Call To Action Button */
-    .cta-button {
-      display: block;
-      width: fit-content;
-      margin: 0 auto;
-      padding: 18px 56px;
-      background: linear-gradient(90deg, #ff6ec4, #42e695);
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: #121212;
-      border-radius: 34px;
-      box-shadow: 0 0 40px #ff6ec4cc, 0 0 60px #42e695cc;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.4s ease, box-shadow 0.4s ease;
-      letter-spacing: 0.08em;
-      margin-top: 30px;
-    }
-    .cta-button:hover {
-      background: linear-gradient(90deg, #42e695, #ff6ec4);
-      box-shadow: 0 0 60px #ff6ec4ee, 0 0 80px #42e695ee;
-    }
-
-    /* Contact Section */
-    section.contact {
-      background: #1a1f3a;
-      border-radius: 28px;
-      padding: 44px 36px;
-      box-shadow: 0 0 30px #42e695aa inset;
-      max-width: 600px;
-      margin: 0 auto;
-      color: #dce6ff;
-      position: relative;
-      z-index: 10;
-    }
-    section.contact h2 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 2.4rem;
-      text-align: center;
-      margin-bottom: 38px;
-      text-shadow: 0 0 14px #42e695cc;
-      letter-spacing: 0.06em;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-    label {
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #99b1f2;
-      letter-spacing: 0.03em;
-      user-select: none;
-    }
-    input, textarea {
-      border-radius: 16px;
-      border: none;
-      background: #293462;
-      color: #f0f0f5;
-      font-size: 1rem;
-      padding: 14px 18px;
-      font-family: 'Montserrat', sans-serif;
-      box-shadow: inset 0 0 14px #42e69599;
-      transition: box-shadow 0.3s ease, background 0.3s ease;
-      resize: vertical;
-    }
-    input::placeholder, textarea::placeholder {
-      color: #7a85adaa;
-      font-style: italic;
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      background: #36457f;
-      box-shadow: 0 0 28px #42e695cc;
-      color: #fff;
-    }
-    textarea {
-      min-height: 140px;
-    }
-    button {
-      background: linear-gradient(90deg, #ff6ec4, #42e695);
-      border: none;
-      padding: 20px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: #121212;
-      cursor: pointer;
-      box-shadow: 0 0 38px #ff6ec4cc, 0 0 60px #42e695cc;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      font-family: 'Poppins', sans-serif;
-      letter-spacing: 0.08em;
-      user-select: none;
-    }
-    button:hover {
-      background: linear-gradient(90deg, #42e695, #ff6ec4);
-      box-shadow: 0 0 68px #ff6ec4ff, 0 0 88px #42e695ff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 12px;
-      font-size: 0.95rem;
-      color: #8b9affcc;
-      user-select: none;
-      font-family: 'Montserrat', sans-serif;
-      z-index: 10;
-    }
-
-    /* Responsive */
-    @media(max-width: 720px) {
-      header h1 {
-        font-size: 3.2rem;
-      }
-      main {
-        max-width: 90vw;
-      }
-      section.features {
-        grid-template-columns: 1fr !important;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-
 <header>
   <h1>Universal Creations</h1>
   <p>Landing Pages That Pop — Bold, Fast, Unforgettable</p>
@@ -292,62 +372,96 @@
     </div>
   </section>
 
-  <!-- Insert this after the features section inside <main> -->
+  <section class="pricing">
+    <h2>Pricing</h2>
+    <div class="price-tag">Starting at $250 per landing page</div>
+  </section>
 
-<section class="pricing" style="margin-bottom: 100px; text-align:center;">
-  <h2 style="
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 2.8rem;
-    color: #fff;
-    text-shadow: 0 0 10px #ff6ec4cc, 0 0 15px #42e695cc;
-    margin-bottom: 18px;
-  ">
-    Pricing
-  </h2>
-  <div style="
-    display: inline-block;
-    background: linear-gradient(145deg, #ff6ec4, #42e695);
-    padding: 32px 48px;
-    border-radius: 28px;
-    box-shadow: 0 0 40px #ff6ec4cc, 0 0 50px #42e695cc;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 2.4rem;
-    color: #121212;
-    letter-spacing: 0.1em;
-    user-select: none;
-  ">
-    Starting at $250 per landing page
-  </div>
-</section>
+  <a href="#landingFormSection" class="cta-button">Get Your Landing Page</a>
 
+  <!-- Landing Page Booking Form -->
+  <section class="form-section" id="landingFormSection">
+    <h2>Book Your Landing Page</h2>
+    <form id="landingForm" action="https://formspree.io/f/your-landing-form-id" method="POST">
+      <label for="lf_name">Full Name</label>
+      <input type="text" id="lf_name" name="name" required placeholder="Your full name" />
 
-  <a href="#contact" class="cta-button">Get Your Landing Page</a>
+      <label for="lf_email">Email Address</label>
+      <input type="email" id="lf_email" name="_replyto" required placeholder="you@example.com" />
 
-  <section class="contact" id="contact">
-    <h2>Start Your Project</h2>
-    <form action="https://formspree.io/f/mdkdbpyb" method="POST" >
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required placeholder="Your full name" />
+      <label for="lf_business">Business or Project Name</label>
+      <input type="text" id="lf_business" name="business" required placeholder="Your business name" />
 
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="_replyto" required placeholder="you@example.com" />
-
-      <label for="business">Business or Project Name</label>
-      <input type="text" id="business" name="business" required placeholder="Your business name" />
-
-      <label for="details">Describe Your Needs</label>
-      <textarea id="details" name="details" required placeholder="Tell us about your landing page requirements..."></textarea>
+      <label for="lf_details">Describe Your Needs</label>
+      <textarea id="lf_details" name="details" required placeholder="Tell us about your landing page requirements..."></textarea>
 
       <button type="submit">Send Request</button>
     </form>
   </section>
 </main>
 
+<!-- Contact Me Floating Button -->
+<button id="contactButton" aria-label="Contact Me">Contact Me</button>
+
+<!-- Contact Modal -->
+<div id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+  <div id="modalContent">
+    <button id="closeModal" aria-label="Close Contact Form">&times;</button>
+    <h2 id="modalTitle">Contact Me</h2>
+    <form id="contactForm" action="https://formspree.io/f/your-contact-form-id" method="POST">
+      <label for="cf_name">Name</label>
+      <input type="text" id="cf_name" name="name" required placeholder="Your name" />
+
+      <label for="cf_email">Email</label>
+      <input type="email" id="cf_email" name="_replyto" required placeholder="your.email@example.com" />
+
+      <label for="cf_message">Message</label>
+      <textarea id="cf_message" name="message" required placeholder="Your message..."></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
 <footer>
   &copy; 2025 Universal Creations. All rights reserved.
 </footer>
 
-</body>
-</html>
+<script>
+  // Form submission handler for both forms
+  function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        alert('Thank you for reaching out! We will email you soon to discuss your needs in detail.');
+        form.reset();
+        // Close modal if open
+        if (form.id === 'contactForm') {
+          closeModal();
+        }
+      } else {
+        alert('Oops! There was a problem submitting your form. Please try again.');
+      }
+    }).catch(() => {
+      alert('Oops! There was a problem submitting your form. Please try again.');
+    });
+    return false;
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // Attach submit handlers
+    const landingForm = document.getElementById('landingForm');
+    const contactForm = document.getElementById('contactForm');
+    if (landingForm) landingForm.onsubmit = handleSubmit;
+    if (contactForm) contactForm.onsubmit = handleSubmit;
+
+    // Modal controls
+   
