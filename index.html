@@ -28,11 +28,8 @@
   h2 { font-size:2rem; margin-bottom:20px; text-align:center; color:#fff; position:relative; z-index:1; }
   p { max-width:700px; margin:0 auto 40px; text-align:center; color:#ddd; position:relative; z-index:1; }
 
-  /* Features with hover effects */
   .features { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; position:relative; z-index:1; }
-  .feature { 
-    background: rgba(0,0,0,0.5); padding:25px; border-radius:10px; width:250px; transition:0.3s; text-align:center; 
-  }
+  .feature { background: rgba(0,0,0,0.5); padding:25px; border-radius:10px; width:250px; transition:0.3s; text-align:center; }
   .feature img { width:80px; height:80px; margin-bottom:15px; transition: transform 0.3s, filter 0.3s; }
   .feature:hover { transform: translateY(-5px); box-shadow:0 0 15px rgba(0,0,0,0.3); }
   .feature:hover img { transform: scale(1.2); filter: drop-shadow(0 0 10px #007bff); }
@@ -51,7 +48,6 @@
 
   footer { text-align:center; padding:40px 20px; color:#ccc; font-size:0.9rem; }
 
-  /* Fixed Icons */
   .whatsapp-fix { position:fixed; bottom:20px; right:20px; background:#25D366; width:50px; height:50px; border-radius:50%; display:flex; justify-content:center; align-items:center; box-shadow:0 0 10px #25D366; z-index:1000; transition:0.3s; }
   .whatsapp-fix:hover { transform:scale(1.05); box-shadow:0 0 15px #25D366; }
   .whatsapp-fix img { width:28px; height:28px; }
@@ -63,7 +59,6 @@
   .fade-in { opacity:0; transform: translateY(30px); transition:all 1s ease-out; }
   .fade-in.visible { opacity:1; transform: translateY(0); }
 
-  /* Modal */
   .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:2000; }
   .modal-content { background:#111; padding:40px; border-radius:12px; text-align:center; color:#fff; max-width:400px; width:90%; animation:fadeIn 0.5s; }
   .modal-content h2 { margin-bottom:20px; }
@@ -76,99 +71,113 @@
 </head>
 <body>
 
-  <!-- Hero -->
-  <header>
-    <h1 class="fade-in">Book Your Landing Page for $200</h1>
-    <p class="fade-in">Professional, modern, and high-converting landing pages designed to grow your business.</p>
-    <a href="#book"><button class="cta-btn fade-in">Book Now</button></a>
-  </header>
+<header>
+  <h1 class="fade-in">Book Your Landing Page for ₹17,000</h1>
+  <p class="fade-in">Professional, modern, and high-converting landing pages designed to grow your business.</p>
+  <a href="#book"><button class="cta-btn fade-in">Book Now - ₹17,000 (~$194)</button></a>
+</header>
 
-  <!-- Features Section -->
-  <section>
-    <div class="section-bg" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1600');"></div>
-    <h2 class="fade-in">Why Choose Landing Craft?</h2>
-    <p class="fade-in">We build landing pages that are clean, responsive, and optimized for conversions. Each page is tailored to your brand and business goals.</p>
-    <div class="features">
-      <div class="feature fade-in">
-        <img src="https://img.icons8.com/ios/100/ffffff/monitor--v1.png" alt="Responsive">
-        <h3>Responsive Design</h3>
-        <p>Perfect on desktop, tablet, and mobile.</p>
-      </div>
-      <div class="feature fade-in">
-        <img src="https://img.icons8.com/ios/100/ffffff/fast-forward.png" alt="Fast">
-        <h3>Fast & Optimized</h3>
-        <p>Lightning-fast load times to keep users engaged.</p>
-      </div>
-      <div class="feature fade-in">
-        <img src="https://img.icons8.com/ios/100/ffffff/paint-palette.png" alt="Design">
-        <h3>Custom Styling</h3>
-        <p>Professional, modern designs tailored to your brand.</p>
-      </div>
-      <div class="feature fade-in">
-        <img src="https://img.icons8.com/ios/100/ffffff/email.png" alt="Integration">
-        <h3>Easy Integration</h3>
-        <p>Email and WhatsApp ready for instant communication.</p>
-      </div>
+<section>
+  <div class="section-bg" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1600');"></div>
+  <h2 class="fade-in">Why Choose Landing Craft?</h2>
+  <p class="fade-in">We build landing pages that are clean, responsive, and optimized for conversions. Each page is tailored to your brand and business goals.</p>
+  <div class="features">
+    <div class="feature fade-in">
+      <img src="https://img.icons8.com/ios/100/ffffff/monitor--v1.png" alt="Responsive">
+      <h3>Responsive Design</h3>
+      <p>Perfect on desktop, tablet, and mobile.</p>
     </div>
-  </section>
-
-  <!-- Booking Form -->
-  <section id="book">
-    <h2 class="fade-in">Book Your Landing Page</h2>
-    <div class="form-section fade-in">
-      <form id="bookingForm" action="https://formspree.io/f/mdkdbpyb" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Your Phone" required>
-        <textarea name="message" rows="5" placeholder="Your Message / Requirements" required></textarea>
-        <button type="submit" class="submit-btn">Submit Booking</button>
-      </form>
+    <div class="feature fade-in">
+      <img src="https://img.icons8.com/ios/100/ffffff/fast-forward.png" alt="Fast">
+      <h3>Fast & Optimized</h3>
+      <p>Lightning-fast load times to keep users engaged.</p>
     </div>
-  </section>
-
-  <!-- Modal -->
-  <div class="modal" id="formModal">
-    <div class="modal-content">
-      <h2>Thank You!</h2>
-      <p>Your booking request has been submitted. You will receive an email soon.</p>
-      <p>You can also message us on <a href="https://wa.me/919607810111" target="_blank" style="color:#25D366;">WhatsApp</a> or <a href="https://www.instagram.com/landing__craft/" target="_blank" style="color:#E1306C;">Instagram</a> for direct contact.</p>
-      <button onclick="closeModal()">Close</button>
+    <div class="feature fade-in">
+      <img src="https://img.icons8.com/ios/100/ffffff/paint-palette.png" alt="Design">
+      <h3>Custom Styling</h3>
+      <p>Professional, modern designs tailored to your brand.</p>
+    </div>
+    <div class="feature fade-in">
+      <img src="https://img.icons8.com/ios/100/ffffff/email.png" alt="Integration">
+      <h3>Easy Integration</h3>
+      <p>Email and WhatsApp ready for instant communication.</p>
     </div>
   </div>
+</section>
 
-  <footer>
-    &copy; 2025 Landing Craft | Email: omkakad0111@gmail.com | Contact: +919607810111
-  </footer>
+<section id="book">
+  <h2 class="fade-in">Book Your Landing Page</h2>
+  <div class="form-section fade-in">
+    <form id="bookingForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone" required>
+      <textarea name="message" rows="5" placeholder="Your Message / Requirements" required></textarea>
+      <button type="button" id="rzp-button" class="submit-btn">Pay ₹17,000 (~$194)</button>
+    </form>
+  </div>
+</section>
 
-  <!-- Fixed Icons -->
-  <a href="https://wa.me/919607810111" target="_blank" class="whatsapp-fix">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
+<div class="modal" id="formModal">
+  <div class="modal-content">
+    <h2>Thank You!</h2>
+    <p>Your booking request has been submitted. You will receive an email soon.</p>
+    <p>You can also message us on <a href="https://wa.me/919607810111" target="_blank" style="color:#25D366;">WhatsApp</a> or <a href="https://www.instagram.com/landing__craft/" target="_blank" style="color:#E1306C;">Instagram</a> for direct contact.</p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
 
-  <a href="https://www.instagram.com/landing__craft/" target="_blank" class="instagram-fix">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-  </a>
+<footer>
+  &copy; 2025 Landing Craft | Email: omkakad0111@gmail.com | Contact: +919607810111
+</footer>
 
-  <script>
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, appearOptions);
-    faders.forEach(fader => { appearOnScroll.observe(fader); });
+<a href="https://wa.me/919607810111" target="_blank" class="whatsapp-fix">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+<a href="https://www.instagram.com/landing__craft/" target="_blank" class="instagram-fix">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+</a>
 
-    const form = document.getElementById('bookingForm');
-    const modal = document.getElementById('formModal');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }})
-      .then(response => { form.reset(); modal.style.display = 'flex'; })
-      .catch(error => { alert('Submission failed. Please try again.'); });
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
     });
-    function closeModal(){ modal.style.display = 'none'; }
-  </script>
+  }, appearOptions);
+  faders.forEach(fader => { appearOnScroll.observe(fader); });
 
+  const form = document.getElementById('bookingForm');
+  const modal = document.getElementById('formModal');
+
+  document.getElementById('rzp-button').onclick = function(e){
+    var options = {
+      "key": "rzp_live_FEdG3Sa1Yn8yHh",
+      "amount": 1700000, // ₹17,000 in paise
+      "currency": "INR",
+      "name": "Landing Craft",
+      "description": "Landing Page Booking",
+      "handler": function (response){
+        var formData = new FormData(form);
+        fetch("https://formspree.io/f/mdkdbpyb", {
+          method: "POST",
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        }).then(res => {
+          form.reset();
+          modal.style.display = 'flex';
+        }).catch(err => { alert("Form submission failed."); });
+      },
+      "theme": { "color": "#007bff" }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+    e.preventDefault();
+  }
+
+  function closeModal(){ modal.style.display = 'none'; }
+</script>
 </body>
 </html>
